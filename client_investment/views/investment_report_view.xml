@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Daj widok akcji na samą górę, ponieważ Odoo ładuje pliki xmlowe od góry do dołu i akcje najlepiej dawać na samą górę.-->
+    <!--Nie musisz dawać field=name"view_id" poniżej zobaczysz czemu.-->
+    <record id="action_investment_report" model="ir.actions.act_window">
+        <field name="name">Investment Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">investment_report</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No reports found.
+            </p>
+        </field>
+    </record>
+
+    <!-- Tree view-->
+	<record id="investment_report_tree_view" model="ir.ui.view">
+		<field name="name">investment.report.tree.view</field>
+		<field name="model">investment_report</field>
+		<field name="arch" type="xml">
+			<tree string="Reports">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </tree>
+		</field>
+	</record>
+
+    <!--Form Views-->
+    <record id="investment_report_form_view" model="ir.ui.view">
+        <field name="name">investment.report.form.view</field>
+        <field name="model">investment_report</field>
+        <field name="arch" type="xml">
+            <form string="Report">
+                <!--Nie bardzo rozumiem po co dałeś taki header jaki dałeś. W header raczej umieszcza się tylko przyciski-->
+                <sheet>
+                    <!--Taka klasa specjalna do tytułu-->
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" class="o_text_overflow" placeholder="Report Name..."/>
+                        </h1>
+                    </div>
+
+                    <!--Nie uważasz, że tak ładniej wygląda? XD-->
+                    <group>
+                        <group name="report_details" string="Report Details">
+                            <field name="partner_id"/>
+                        </group>
+
+                        <group name="report_dates" string="Report Dates">
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Investments" name="investment_list">
+                            <group>
+                                <field name="investment_ids" mode="tree">
+                                    <tree string="Investments">
+                                        <field name="state" invisible="1"/>
+                                        <field name="name"/>
+                                        <field name="partner_id"/>
+                                        <field name="date_order"/>
+                                        <field name="amount_untaxed"/>
+                                        <field name="amount_total"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Action View Routers-->
+    <!--To są routery. Dzięki nim nie musisz podawać view_id w rekordzie action, ponieważ te routery wskazują jaki widok ma się odpalać w jakim trybie.
+        Możesz dać kilka widoków tree, czy form i wtedy sequence ustalasz któ©y jest ten główny a jaki poboczny.-->
+    <record id="action_investment_report_view_tree" model="ir.actions.act_window.view">
+        <field name="sequence">1</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="client_investment.investment_report_tree_view"/>
+        <field name="act_window_id" ref="client_investment.action_investment_report"/>
+    </record>
+
+    <record id="action_investment_report_view_form" model="ir.actions.act_window.view">
+        <field name="sequence">1</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="client_investment.investment_report_form_view"/>
+        <field name="act_window_id" ref="client_investment.action_investment_report"/>
+    </record>
+
+    <!--Menu items-->
+    <menuitem id="menu_investment_report" name="Investment Report" parent="sale.menu_sale_report"
+              action="client_investment.action_investment_report" sequence="9"/>
+</odoo>

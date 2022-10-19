@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="client_investment_partner_form_view" model="ir.ui.view">
+        <field name="name">client.investment.partner.form.view</field>
+        <field name="model">res.partner</field>
+	    <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[last()]" position="after">
+                <!--Wybrałem dodanie nowej zakładki (page), ponieważ uważam, że tak będzie bardziej czytelne.
+                    Ponad to, mogę dodać uprawnienia do całej zakładki, przez co nie muszę tego robic dla każdego pola-->
+                <page name="investments" string="Investments" groups="sales_team.group_sale_manager">
+                    <group>
+                        <!--Zobacz jak deklaruję pole One2many.
+                            Rozbijam to na widok tree w którym wybieram dokładnie te pola, które mają się wyświetlać-->
+                        <field name="investment_ids" mode="tree">
+                            <tree string="Investments">
+                                <!--Dodaję pole "state", bo Odoo jest pojebane i robi problemy jak się nie da.
+                                    Chodzi o to, że dając readonly na One2many doców ze statusami, nie przenosząc statusu do widoku
+                                    robimy problem, bo status zmienia info, a mamy readonly xD
+                                    Dlatego trzeba dać state i zrobić niewidzialnym (chyba że chcemy widzieć),
+                                    by umożliwić zmiany mimo readonly-->
+                                <field name="state" invisible="1"/>
+                                <field name="name"/>
+                                <field name="date_order"/>
+                                <field name="amount_untaxed"/>
+                                <field name="amount_total"/>
+                            </tree>
+                        </field>
+
+                        <group name="summary" string="Summary">
+                            <field name="investment_untaxed_sum"/>
+                            <field name="investment_total_sum"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

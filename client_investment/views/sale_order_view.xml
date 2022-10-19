@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Zobacz jakie id dałem temu rekordu. Powiązanie z modułem / funkcjonalnością _ model _ rodzaj widoku-->
+    <record id="client_investment_sale_form_view" model="ir.ui.view">
+        <field name="name">client.investment.sale.form.view</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="investor_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
