@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="investor_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="obj">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+
+                        <div class="col-auto" name="report_name" style="text-align: center">
+                            <h1 t-field="obj.name"/>
+                        </div>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <table class="table table-sm" style="border-collapse: collapse; border: 0; width: 300px">
+                            <tr class="text-left">
+                                <td style="width: 100px; border: 0">
+                                    <strong>Partner:</strong>
+                                </td>
+                                <td style="width: 200px; border: 0">
+                                    <span t-field="obj.partner"/>
+                                </td>
+                            </tr>
+                            <tr class="text-left">
+                                <td style="border: 0">
+                                    <strong>Start Date:</strong>
+                                </td>
+                                <td style="border: 0">
+                                    <span t-field="obj.start_date" t-options="{'widget': 'date','format': 'dd.MM.yyyy'}"/>
+                                </td>
+                            </tr>
+                            <tr class="text-left">
+                                <td style="border: 0">
+                                    <strong>End Date:</strong>
+                                </td>
+                                <td style="border: 0">
+                                    <span t-field="obj.end_date" t-options="{'widget': 'date','format': 'dd.MM.yyyy'}"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <br/>
+
+                        <table class="table table-sm o_main_table" style="border-collapse: collapse; border: 1px solid #000000">
+                            <thead style="display: table-row-group">
+                                <tr class="text-center">
+                                    <th name="th_name" style="border: 1px solid #000000">Name</th>
+                                    <th name="th_partner" style="border: 1px solid #000000">Customer</th>
+                                    <th name="th_order_date" style="border: 1px solid #000000">Order Date</th>
+                                    <th name="th_untaxed_amount" style="border: 1px solid #000000">Untaxed Amount</th>
+                                    <th name="th_tax_amount" style="border: 1px solid #000000">Tax Amount</th>
+                                    <th name="th_total_amount" style="border: 1px solid #000000">Total Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody class="sale_tbody">
+                                <t t-foreach="obj.investments" t-as="investment">
+                                    <tr class="text-left" style="outline: thin solid black">
+                                        <td style="border: 1px solid #000000" name="th_name">
+                                            <span t-field="investment.name"/>
+                                        </td>
+                                        <td style="border: 1px solid #000000" name="th_partner">
+                                            <span t-field="investment.partner_id"/>
+                                        </td>
+                                        <td style="border: 1px solid #000000" name="th_order_date">
+                                            <span t-field="investment.date_order" t-options="{'widget': 'datetime','format': 'dd.MM.yyyy'}"/>
+                                        </td>
+                                        <td style="border: 1px solid #000000" name="th_untaxed_amount" class="text-right">
+                                            <span t-field="investment.amount_untaxed"/>
+                                        </td>
+                                        <td style="border: 1px solid #000000" name="th_tax_amount" class="text-right">
+                                            <span t-field="investment.amount_tax"/>
+                                        </td>
+                                        <td style="border: 1px solid #000000" name="th_total_amount" class="text-right">
+                                            <span t-field="investment.amount_total"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+
+                        <br/>
+
+                        <table class="table table-sm o_main_table" style="border-collapse: collapse; border: 1px solid #000000; width: 300px" align="right">
+                            <tr class="text-left" style="outline: thin solid black">
+                                <td style="border: 1px solid #000000">
+                                    <strong>Total Untaxed:</strong>
+                                </td>
+                                <td style="border: 1px solid #000000" class="text-right">                                   
+                                    <span t-field="obj.net_sum" t-options="{'widget': 'monetary', 'display_currency': obj.investments.currency_id}"/>
+                                </td>
+                            </tr>
+                            <tr class="text-left" style="outline: thin solid black">
+                                <td style="border: 1px solid #000000">
+                                    <strong>Total Tax:</strong>
+                                </td>
+                                <td style="border: 1px solid #000000" class="text-right">
+                                    <span t-field="obj.tax_sum" t-options="{'widget': 'monetary', 'display_currency': obj.investments.currency_id}"/>
+                                </td>
+                            </tr>
+                            <tr class="text-left" style="outline: thin solid black">
+                                <td style="border: 1px solid #000000">
+                                    <strong>Total Taxed:</strong>
+                                </td>
+                                <td style="border: 1px solid #000000" class="text-right">
+                                    <span t-field="obj.gross_sum" t-options="{'widget': 'monetary', 'display_currency': obj.investments.currency_id}"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

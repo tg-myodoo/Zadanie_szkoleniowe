@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree view-->
+	<record id="investor_report_tree_view" model="ir.ui.view">
+		<field name="name">investor.report.tree.view</field>
+		<field name="model">investor.report</field>
+		<field name="arch" type="xml">
+			<tree string="Reports">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="partner"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </tree>
+		</field>
+	</record>
+
+    <!--Form Views-->
+    <record id="investor_report_form_view" model="ir.ui.view">
+        <field name="name">investor.report.form.view</field>
+        <field name="model">investor.report</field>
+        <field name="arch" type="xml">
+            <form string="Report">
+                <header>
+                    <h1>
+                        Investor Report 2
+                    </h1>
+                </header>
+                <sheet>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <group>
+                        <field name="partner"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="investments"/>
+                        <field name="net_sum" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                        <field name="tax_sum" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                        <field name="gross_sum" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                        <field name="currency_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Action Views-->
+    <record id="action_investor_report" model="ir.actions.act_window">
+        <field name="name">Investor Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">investor.report</field>
+        <field name="view_id" ref="investor_report_tree_view"/>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No reports found.
+            </p>
+        </field>
+    </record>
+
+    <!--Menu items-->
+    <menuitem id="menu_investor_report" 
+        name="Investor Report"
+        parent="sale.menu_sale_report" 
+        action="my_contacts.action_investor_report" 
+        sequence="9"/>
+
+</odoo>

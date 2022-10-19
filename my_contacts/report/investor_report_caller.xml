@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_report_investor_report" model="ir.actions.report">
+            <field name="name">Investor Report</field>
+            <field name="model">investor.report</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">my_contacts.investor_report_template</field>
+            <field name="report_file">my_contacts.investor_report_template</field>
+            <field name="print_report_name">'Report - %s' % (object.name)</field>
+            <field name="binding_model_id" ref="model_investor_report"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>
