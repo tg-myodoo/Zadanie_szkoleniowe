@@ -1,0 +1,277 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* client_investment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-24 14:12+0000\n"
+"PO-Revision-Date: 2022-10-25 10:07+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: pl\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#. module: client_investment
+#: model:ir.actions.report,print_report_name:client_investment.action_report_investor_report
+msgid "'Report - %s' % (object.name)"
+msgstr "'Raport - %s' % (object.name)"
+
+#. module: client_investment
+#: model_terms:ir.ui.view,arch_db:client_investment.investor_report_template
+msgid "<strong>End Date:</strong>"
+msgstr "<strong>Data końcowa:</strong>"
+
+#. module: client_investment
+#: model_terms:ir.ui.view,arch_db:client_investment.investor_report_template
+msgid "<strong>Partner:</strong>"
+msgstr "<strong>Partner:</strong>"
+
+#. module: client_investment
+#: model_terms:ir.ui.view,arch_db:client_investment.investor_report_template
+msgid "<strong>Start Date:</strong>"
+msgstr "<strong>Data początkowa:</strong>"
+
+#. module: client_investment
+#: model_terms:ir.ui.view,arch_db:client_investment.investor_report_template
+msgid "<strong>Total Taxed:</strong>"
+msgstr "<strong>Suma brutto:</strong>"
+
+#. module: client_investment
+#: model_terms:ir.ui.view,arch_db:client_investment.investor_report_template
+msgid "<strong>Total Untaxed:</strong>"
+msgstr "<strong>Suma netto:</strong>"
+
+#. module: client_investment
+#: model:ir.model.fields,field_description:client_investment.field_investment_report__amount_total
+msgid "Amount Total"
+msgstr "Suma brutto"
+
+#. module: client_investment
+#: model:ir.model.fields,field_description:client_investment.field_investment_report__amount_untaxed
+msgid "Amount Untaxed"
+msgstr "Suma netto"
+
+#. module: client_investment
+#: model:ir.model,name:client_investment.model_res_partner
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: client_investment
+#: model:ir.model.fields,field_description:client_investment.field_investment_report__create_uid
+msgid "Created by"
+msgstr "Utworzono przez"
+
+#. module: client_investment
+#: model:ir.model.fields,field_description:client_investment.field_investment_report__create_date
+msgid "Created on"
+msgstr "Utworzono"
+
+#. module: client_investment
+#: model_terms:ir.ui.view,arch_db:client_investment.investor_report_template
+msgid "Customer"
+msgstr "Klient"
+
+#. module: client_investment
+#: model:ir.model.fields,field_description:client_investment.field_investment_report__display_name
+msgid "Display Name"
+msgstr "Wyświetlana nazwa"
+
+#. module: client_investment
+#: model:ir.model.fields,field_description:client_investment.field_investment_report__end_date
+msgid "End Date"
+msgstr "Data końcowa"
+
+#. module: client_investment
+#: model:ir.model.fields,help:client_investment.field_investment_report__end_date
+msgid "End date of this report."
+msgstr "Data końcowa raportu."
+
+#. module: client_investment
+#: model:ir.model.fields,field_description:client_investment.field_investment_report__id
+msgid "ID"
+msgstr "ID"
+
+#. module: client_investment
+#: model:ir.actions.act_window,name:client_investment.action_investment_report
+#: model:ir.model,name:client_investment.model_investment_report
+#: model:ir.ui.menu,name:client_investment.menu_investment_report
+msgid "Investment Report"
+msgstr "Raport z inwestycji"
+
+#. module: client_investment
+#: model:ir.model.fields,field_description:client_investment.field_res_partner__investment_total_sum
+#: model:ir.model.fields,field_description:client_investment.field_res_users__investment_total_sum
+msgid "Investment Total Sum"
+msgstr "Suma brutto inwestycji"
+
+#. module: client_investment
+#: model:ir.model.fields,field_description:client_investment.field_res_partner__investment_untaxed_sum
+#: model:ir.model.fields,field_description:client_investment.field_res_users__investment_untaxed_sum
+msgid "Investment Untaxed Sum"
+msgstr "Suma netto inwestycji"
+
+#. module: client_investment
+#: model:ir.model.fields,field_description:client_investment.field_investment_report__investment_ids
+#: model:ir.model.fields,field_description:client_investment.field_res_partner__investment_ids
+#: model:ir.model.fields,field_description:client_investment.field_res_users__investment_ids
+#: model_terms:ir.ui.view,arch_db:client_investment.client_investment_partner_form_view
+#: model_terms:ir.ui.view,arch_db:client_investment.investment_report_form_view
+msgid "Investments"
+msgstr "Inwestycje"
+
+#. module: client_investment
+#: model:ir.model.fields,field_description:client_investment.field_investment_report__partner_id
+#: model:ir.model.fields,field_description:client_investment.field_sale_order__investor_id
+msgid "Investor"
+msgstr "Inwestor"
+
+#. module: client_investment
+#: model:ir.actions.report,name:client_investment.action_report_investor_report
+msgid "Investor Report"
+msgstr "Raport inwestora"
+
+#. module: client_investment
+#: model:ir.model.fields,help:client_investment.field_investment_report__partner_id
+msgid "Investor chosen for this report."
+msgstr "Inwestor wybrany do raportu."
+
+#. module: client_investment
+#: model:ir.model.fields,help:client_investment.field_sale_order__investor_id
+msgid "Investor for this sale order."
+msgstr "Inwestor wybrany do tej sprzedaży."
+
+#. module: client_investment
+#: model:ir.model.fields,field_description:client_investment.field_investment_report____last_update
+msgid "Last Modified on"
+msgstr "Ostatnio zmodyfikowano"
+
+#. module: client_investment
+#: model:ir.model.fields,field_description:client_investment.field_investment_report__write_uid
+msgid "Last Updated by"
+msgstr "Ostatnio zaktualizowano przez"
+
+#. module: client_investment
+#: model:ir.model.fields,field_description:client_investment.field_investment_report__write_date
+msgid "Last Updated on"
+msgstr "Ostatnio zaktualizowano "
+
+#. module: client_investment
+#: model:ir.model.fields,help:client_investment.field_res_partner__investment_ids
+#: model:ir.model.fields,help:client_investment.field_res_users__investment_ids
+msgid "List of investments for this partner."
+msgstr "Lista inwestycji danego partnera."
+
+#. module: client_investment
+#: model:ir.model.fields,help:client_investment.field_investment_report__investment_ids
+msgid "List of investments of selected client from given date period."
+msgstr "Lista inwestycji danego partnera w wybranym przedziale dat."
+
+#. module: client_investment
+#: model:ir.model.fields,field_description:client_investment.field_investment_report__name
+#: model_terms:ir.ui.view,arch_db:client_investment.investor_report_template
+msgid "Name"
+msgstr "Nazwa"
+
+#. module: client_investment
+#: model:ir.model.fields,help:client_investment.field_investment_report__name
+msgid "Name of this report."
+msgstr "Nazwa raportu"
+
+#. module: client_investment
+#: model_terms:ir.actions.act_window,help:client_investment.action_investment_report
+msgid "No reports found."
+msgstr "Nie znaleziono raportów."
+
+#. module: client_investment
+#: model_terms:ir.ui.view,arch_db:client_investment.investor_report_template
+msgid "Order Date"
+msgstr "Data zamówienia"
+
+#. module: client_investment
+#: model_terms:ir.ui.view,arch_db:client_investment.investment_report_form_view
+msgid "Report"
+msgstr "Raport"
+
+#. module: client_investment
+#: model_terms:ir.ui.view,arch_db:client_investment.investment_report_form_view
+msgid "Report Dates"
+msgstr "Data raportu"
+
+#. module: client_investment
+#: model_terms:ir.ui.view,arch_db:client_investment.investment_report_form_view
+msgid "Report Details"
+msgstr "Szczegóły raportu"
+
+#. module: client_investment
+#: model_terms:ir.ui.view,arch_db:client_investment.investment_report_form_view
+msgid "Report Name..."
+msgstr "Nazwa raportu..."
+
+#. module: client_investment
+#: model_terms:ir.ui.view,arch_db:client_investment.investment_report_tree_view
+msgid "Reports"
+msgstr "Raporty"
+
+#. module: client_investment
+#: model:ir.model,name:client_investment.model_sale_order
+msgid "Sales Order"
+msgstr "Zamówienie"
+
+#. module: client_investment
+#: model:ir.model.fields,field_description:client_investment.field_investment_report__start_date
+msgid "Start Date"
+msgstr "Data początkowa"
+
+#. module: client_investment
+#: model:ir.model.fields,help:client_investment.field_investment_report__start_date
+msgid "Start date of this report."
+msgstr "Data początkowa raportu."
+
+#. module: client_investment
+#: model:ir.model.fields,help:client_investment.field_res_partner__investment_total_sum
+#: model:ir.model.fields,help:client_investment.field_res_users__investment_total_sum
+msgid "Sum of this partner investments total amount."
+msgstr "Suma brutto inwestycji danego partnera."
+
+#. module: client_investment
+#: model:ir.model.fields,help:client_investment.field_res_partner__investment_untaxed_sum
+#: model:ir.model.fields,help:client_investment.field_res_users__investment_untaxed_sum
+msgid "Sum of this partner investments untaxed amount."
+msgstr "Suma netto inwestycji danego partnera."
+
+#. module: client_investment
+#: model_terms:ir.ui.view,arch_db:client_investment.client_investment_partner_form_view
+#: model_terms:ir.ui.view,arch_db:client_investment.investment_report_form_view
+msgid "Summary"
+msgstr "Podsumowanie"
+
+#. module: client_investment
+#: model_terms:ir.ui.view,arch_db:client_investment.investor_report_template
+msgid "Tax Amount"
+msgstr "Suma podatków"
+
+#. module: client_investment
+#: model_terms:ir.ui.view,arch_db:client_investment.investor_report_template
+msgid "Total Amount"
+msgstr "Suma brutto"
+
+#. module: client_investment
+#: model:ir.model.fields,help:client_investment.field_investment_report__amount_total
+msgid "Total amount of every investment in this report."
+msgstr "Suma brutto wszystkich inwestycji w tym raporcie."
+
+#. module: client_investment
+#: model_terms:ir.ui.view,arch_db:client_investment.investor_report_template
+msgid "Untaxed Amount"
+msgstr "Suma netto"
+
+#. module: client_investment
+#: model:ir.model.fields,help:client_investment.field_investment_report__amount_untaxed
+msgid "Untaxed amount of every investment in this report."
+msgstr "Suma netto wszystkich inwestycji w tym raporcie."
