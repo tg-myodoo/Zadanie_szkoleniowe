@@ -72,3 +72,4 @@ class InvestmentReport(models.Model):
                                   help='Untaxed amount of every investment in this report.')
     amount_total = fields.Float(string='Amount Total', default=0.0, compute='_compute_amount',
                                 help='Total amount of every investment in this report.')
+
